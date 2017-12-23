@@ -1,0 +1,5 @@
+/build/*
+/*.kate-swp
+.ctags
+*.swp
+*.DS_STORE

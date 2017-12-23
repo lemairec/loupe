@@ -27,7 +27,8 @@ add_executable(${EXECUTABLE_NAME} main.cpp)
 
 # Detect and add SFML
 #/usr/local/Cellar/sfml/2.4.2_1/lib
-set(CMAKE_MODULE_PATH "/usr/local/Cellar/sfml/2.4.2_1/share/SFML/cmake/Modules" ${CMAKE_MODULE_PATH})
+
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 #Find any version 2.X of SFML
 #See the FindSFML.cmake file for additional details and instructions
 find_package(SFML 2 REQUIRED network audio graphics window system)
