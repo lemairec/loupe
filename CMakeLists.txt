@@ -9,7 +9,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 # (you can also set it on the command line: -D CMAKE_BUILD_TYPE=Release)
 
-project(myproject)
+project(loupe)
 
 # Set version information in a config.h file
 set(myproject_VERSION_MAJOR 1)
@@ -31,8 +31,12 @@ add_executable(${EXECUTABLE_NAME} main.cpp)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 #Find any version 2.X of SFML
 #See the FindSFML.cmake file for additional details and instructions
+
 find_package(SFML 2 REQUIRED network audio graphics window system)
+FIND_PACKAGE( OpenCV REQUIRED )
+
+
 if(SFML_FOUND)
   include_directories(${SFML_INCLUDE_DIR})
-  target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+  target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES} ${SFML_DEPENDENCIES} ${OpenCV_LIBS})
 endif()
