@@ -21,7 +21,7 @@ configure_file(
 include_directories("${PROJECT_BINARY_DIR}")
 
 # Define sources and executable
-set(EXECUTABLE_NAME "myproject")
+set(EXECUTABLE_NAME "loupe")
 add_executable(${EXECUTABLE_NAME} main.cpp)
 
 
